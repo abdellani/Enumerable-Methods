@@ -68,7 +68,6 @@ module Enumerable
     end
     result
   end
-
 end
 
 class Array
