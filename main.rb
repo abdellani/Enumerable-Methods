@@ -43,7 +43,7 @@ module Enumerable
   def my_count
     count=0
     self.my_each do |element|
-      count +=1 if yield element
+      count +=1 if (not block_given? ) || yield( element)
     end
     count
   end
@@ -94,6 +94,7 @@ puts "#my_none?"
 puts arr.my_none? {|element| element==10}
 puts "#my_count"
 puts arr.my_count{ |element| element ==9}
+puts arr.my_count
 puts "#my_inject"
 puts arr.my_inject{|sum,element| sum+element }
 puts "#multiply_els([2,4,5])"
