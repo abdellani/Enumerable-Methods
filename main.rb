@@ -7,7 +7,7 @@ module Enumerable
 
   def my_each_with_index
     self.length.times do |i|
-      yield i, self[i]
+      yield self[i],i 
     end
   end
 
@@ -83,7 +83,7 @@ arr=[1,2,5,9,7,9]
 puts "#my_each"
 arr.my_each {|element| puts element}
 puts "#my_each_with_index"
-arr.my_each_with_index{|index,element| puts "#{index} -> #{element}"}
+arr.my_each_with_index{|element,index| puts "#{index} -> #{element}"}
 puts "#my_select"
 puts arr.my_select{|element| element>5}
 puts "#my_all?"
